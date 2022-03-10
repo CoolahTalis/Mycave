@@ -1,0 +1,32 @@
+%cleanCenter {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+%titleCenter {
+        background-color: #3E0018;
+        border-radius:0 0 10px 10px;
+        padding: 10px;
+        color: white;
+        text-align: center;
+}
+
+%titleCenter2 {
+        background-color: #885C7E;
+        border: 5px solid white;
+        border-radius: 10px 10px 0 0;
+        padding: 10px;
+        color: white;
+        text-align: center;
+}
+
+%allStyle {
+    background-color: #885C7E;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+} 
+

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+		{% block stylesheets %}{% endblock %}
+		<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+		{# <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source Sans Pro"> #}
+	</head>
+
+	<header>
+		<nav>
+					<img src="images/logo1.png" alt="">
+			<ul>
+				<li>
+				</li>
+				<li>
+					<a href="{{path('accueil')}}">Accueil</a>
+				</li>
+				<li>
+					<a href="{{path('contact')}}">Contact</a>
+				</li>
+				<li>
+					<a href="{{path('listVins')}}">Liste des vins</a>
+				</li>
+				{% if not app.user %}
+				<li>
+					<a href="{{path('connexion')}}">Connexion</a>
+				</li>
+				<li>
+					<a href="{{path('inscription')}}">Inscription</a>
+				</li>
+				{% else %}
+				<li>
+					<a href="{{ path('ajout') }}">Ajouter produit</a>
+				</li>
+				<li>
+					<a href="{{path('deconnexion')}}">Deconnexion</a>
+				</li>
+				{% endif %}
+
+			</ul>
+		</nav>
+	</header>
+	<body style="background-image: url(../images/red_wine-lg.jpg)">
+		{% block body %}
+			{% block javascripts %}
+			{% endblock %}
+		{% endblock %}
+ 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
+	</body>
+</html>

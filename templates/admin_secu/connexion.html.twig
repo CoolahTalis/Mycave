@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	CONNEXION
+{% endblock %}
+
+
+{% block body %}
+	{% block titre %}
+		<h1>
+			<span>
+				 CONNECTEZ-VOUS AFIN D'AJOUTER, MODIFIER OU SUPPRIMER DES PRODUITS !
+			</span>
+		</h1>
+
+	{% endblock %}
+
+	<form action="{{path('connexion')}}" method="post" class="form">
+		<div class="">
+			<label for="">Nom d'User</label>
+			<input type="text" required name="_username" class="form-control">
+			<label for="">Mot de passe</label>
+			<input type="password" required name="_password" class="form-control">
+		<input type="submit" value="Login" class="btn btn-success">
+		</div>
+		<h2>
+			<span>
+				 Vous n'êtes pas encore inscrit?  <a href="{{ path('inscription') }}">Cliquez ICI</a> 
+			</span>
+		</h2>
+	</form>
+
+{% endblock %}

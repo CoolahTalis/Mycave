@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Vin
+{% endblock %}
+
+{% block body %}
+	<h1>
+		<span>
+			VIN
+		</span>
+	</h1>
+
+	<section>
+		<article>
+			<div style="background-color: white" alt="">
+				<img class="" src="{{ asset('images/'~ vin.picture ) }}" style="background-image: url('../images/barrels.jpg')" alt="">
+			</div>
+			<div style="margin-bottom:10px ">
+				<h3>{{vin.dom.name}}</h3>
+			</div>
+				<hr>
+			<ul class="">
+				<li class="">Year :
+					{{vin.year}}</li>
+				<li class="">Grapes : {{vin.grapes}}</li>
+				<hr>
+				<li class="">Country :
+					{{vin.dom.country}}</li>
+				<li class="">Région :
+					{{ vin.dom.region}}</li>
+				<hr>
+				<li class="">Description :
+					{{vin.description}}</li>
+				<hr>
+			</ul>
+			{% if not app.user %}
+			<div>
+				<a href="{{ path('listVins') }}" class="btn">Retour</a>			
+			</div>
+			{% else %}
+			<div>
+				<a href="{{ path('modif', {'id': vin.id}) }}" class="btn">Editer produit</a>
+				<a href="{{ path('listVins') }}" class="btn">Retour</a>
+			</div>
+{{ include('admin_vin/_supprimer_form.html.twig') }}
+			{% endif %}
+
+		</article>
+	</section>
+
+
+
+{% endblock %}

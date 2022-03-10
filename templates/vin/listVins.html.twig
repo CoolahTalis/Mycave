@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Vins
+{% endblock %}
+
+{% block body %}
+	<h1>
+		<span>
+			LISTE DES VINS
+		</span>
+	</h1>
+	<h2>
+		<span>
+			<a href="{{path("filtreYear", {'year': 2009}) }}" class="">Filtrer les vins par Année (2009)</a>
+		</span>
+	</h2>
+
+	{% if not isYear %}
+	
+		{% else %}
+			<h2>
+				<span>
+					<a href="{{ path('listVins') }}">Retour</a>
+				</span>
+			</h2>
+	{% endif %}
+
+
+	<section>
+		{% for vin in vins %}
+			<article>
+				<div style="background-color: white" alt="">
+					<img class="" src="{{ asset('images/'~ vin.picture ) }}">
+				</div>
+				<div style="margin-bottom:10px">
+					<h3 class="">{{vin.dom.name}}</h3>
+				</div>
+				<hr>
+				<ul class="">
+					<li class="">Year :
+						{{vin.year}}</li>
+					<li class="">Grapes :
+						{{vin.grapes}}</li>
+					<hr>
+					<li class="">Country :
+						{{vin.dom.country}}</li>
+					<li class="">Région :
+						{{ vin.dom.region}}</li>
+					<hr>
+					<li class="">Description :
+						{{vin.description|u.truncate(35, true)}}
+						...
+						<a href="{{ path('vin', {'id': vin.id}) }}">(Lire la suite)</a>
+					</li>
+				</ul>
+				<hr>
+				<div>
+					<a href="{{ path('vin', {'id': vin.id}) }}" class="btn">Voir produit</a>
+					{% if not app.user %}
+						<a href="{{ path('connexion') }}" class="btn">
+							Editer produit</a>
+					</div>
+				{% else %}
+					<a href="{{ path('modif', {'id': vin.id}) }}" class="btn">Editer produit</a>
+				{% endif %}
+			</article>
+		{% endfor %}
+	</section>
+
+{% endblock %}

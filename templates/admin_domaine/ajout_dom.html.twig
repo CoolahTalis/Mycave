@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+	<h1>
+		<span>
+			AJOUTER UN DOMAINE
+		</span>
+	</h1>
+	<h2>
+	<span>
+	<a href="{{ path('ajout') }}">Retour</a>
+	</span>
+	</h2>
+
+	<div class="form">
+		<div>
+			{{ form_start(forms) }}
+			{{ form_widget(forms) }}
+			<button class="btn">{{ button_label|default('Valider') }}</button>
+			{{ form_end(forms) }}
+		</div>
+	</div>
+
+{% endblock %}
+

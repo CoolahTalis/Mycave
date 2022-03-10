@@ -1,0 +1,20 @@
+<div class="form">
+	<div>
+	{{ form_start(form) }}
+	{{ form_widget(form) }}
+	<button class="btn">{{ button_label|default('Valider') }}</button>
+
+{# ------------------------------------------------------------------------------------------------------------------------- #}
+	{# TEST SANS LA METHOD INCLUDE POUR METTRE LE BTN SUPP DANS LE FORM MODIF MAIS PAS D'ALERT CONFIRMATION SUPP, A CHECKER!!!
+	NE PAS OUBLIER DE GERE LE PATH DANS LE CONTROLLER SI "CRTL+Z" #}
+	{# {{ include('admin_vin/_supprimer_form.html.twig') }} #}
+{# ------------------------------------------------------------------------------------------------------------------------- #}
+
+{# <form method="post" action="{{ path('supprimer', {'id': vin.id}) }}" onsubmit="return confirm('Voulez-vous vraiment supprimer ce produit ?');">
+    <input type="hidden" name="_method" value="SUPPRIMER">
+    <input type="hidden" name="_token" value="{{ csrf_token('supprimer' ~ vin.id) }}">
+    <button class="btn">supprimer</button>
+</form> #}
+	{{ form_end(form) }}
+	</div>
+</div>

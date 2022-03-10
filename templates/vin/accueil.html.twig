@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil My CAVE
+{% endblock %}
+
+{% block body %}
+	<h1>
+		<span>
+			Bienvenue dans My CAVE
+		</span>
+	</h1>
+	{# <h2>
+		<span>
+			<li class="nav-item text-light">
+				<a href="{{path("filtreYEar", {'year': 2009}) }}" class="">Filtrer par Année</a>
+			</li>
+		</span>
+	</h2> #}
+
+	<div id="carrousel" class="carousel">
+		<img src="../images/bottle-s.jpg" alt="">
+		<img src="../images/aperitif-s.jpg" alt="">
+		<img src="../images/purple-s.jpg" alt="">
+		<img src="../images/raisin-s.jpg" alt="">
+		<img src="../images/barrels.jpg" alt="">
+		<img src="../images/wine-s.jpg" alt="">
+		<img src="../images/grapes-s.jpg" alt="">
+	</div>
+
+{% endblock %}

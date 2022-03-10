@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier Produit
+{% endblock %}
+
+{% block body %}
+	<h1>
+		<span>
+			MODIFIER OU SUPPRIMER UN PRODUIT
+		</span>
+	</h1>
+	
+	<h2>
+	<span>
+	<a href="{{ path('vin', {'id': vin.id}) }}">Retour</a>
+	</span>
+	</h2>
+
+	{{ include('admin_vin/_form.html.twig', {'button_label': 'Valider'}) }}
+	{# {{ include('admin_vin/_supprimer_form.html.twig') }} #}
+
+
+{% endblock %}

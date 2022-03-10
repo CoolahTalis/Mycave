@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Inscription
+{% endblock %}
+
+
+{% block body %}
+	{% block titre %}
+    	<h1>
+		<span>
+        INSCRIPTION
+		</span>
+	</h1>
+>
+	{% endblock %}
+
+	<div class= "form">
+		{{ form_start (form) }}
+
+		{{ form_widget (form) }}
+
+		<input type="submit" class="btn btn-succes" value="Valider">
+		
+        {{ form_end (form) }}
+	</div>
+
+{% endblock %}

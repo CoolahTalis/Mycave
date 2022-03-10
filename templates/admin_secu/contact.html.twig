@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CONTACT
+{% endblock %}
+
+{% block body %}
+	<h1>
+		<span>
+				<span style="text-transform:uppercase"></span>
+			vous pouvez contacter par mail le provider en utilisant l'éditeur.
+		</span>
+	</h1>
+
+	<fieldset class="form">
+		<legend>
+			<h3>Mail</h3>
+		</legend>
+			{{form_start(form)}}
+			{{form_widget(form)}}
+				<input type="submit" class="btn" value="Envoyer">
+			{{form_end(form)}}
+
+		</fieldset>
+		<script>
+			CKEDITOR.replace('contenu', {
+height: 100,
+// PLUGIN.JS AJOUTÉ DANS JS FOLDER POUR ENABLE CKEDITOR PLACEHOLDER
+extraPlugins: 'editorplaceholder',
+editorplaceholder: 'Tapez votre message ICI...',
+// IMPLENT "REMOVEBUTTONS:'' " POUR RESETS LES DEFAULT PARAMS
+removeButtons: ''
+});
+		</script>
+
+
+	{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+AJOUTER UN PRODUIT
+{% endblock %}
+
+{% block body %}
+	<h1>
+		<span>
+			AJOUTER UN PRODUIT
+		</span>
+	</h1>
+	<h2><span>
+	<a href="{{ path('ajout_dom') }}">Cliquez ICI pour ajouter un Domaine</a>
+	</span></h2>
+
+	{{ include('admin_vin/_form.html.twig') }}
+
+	{# <a href="{{ path('listVins') }}">Retour</a> #}
+{% endblock %}
